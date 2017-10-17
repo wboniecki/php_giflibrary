@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gif.lib</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="/../web/css/main.css" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/498c2a1c3e.js"></script>
+</head>
+<body>
+<div class="main-container">
+    <div class="main-bar">
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-3-4">
+                <div class="title">
+                    <a href="/">gif.library</a>
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-4">
+                <div class="login-pane">
+                    <?php if (isset($_SESSION['user_session'])): ?>
+                        hello, <?php echo $_SESSION['user_name']; ?>
+                        |
+                        <a href="/logout" class="login-item">logout</a>
+                    <?php else: ?>
+                        <a href="/register" class="login-item">register</a>
+                        |
+                        <a href="/login" class="login-item">login</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-menu-pane">
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-lg-1-5 main-menu-item">
+                    <a href="/categories">categories</a>
+            </div>
+            <?php if (isset($_SESSION['user_session'])): ?>
+            <div class="pure-u-1 pure-u-lg-1-5 main-menu-item">
+                    <a href="/add">add gif</a>
+            </div>
+            <div class="pure-u-1 pure-u-lg-1-5 main-menu-item">
+                    <a href="/favorites">favorites</a>
+            </div>
+            <div class="pure-u-1 pure-u-lg-1-5 main-menu-item">
+                    <a href="/mygifs">my gifs</a>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php
+    if (isset($content)) {
+        include $content;
+    }
+    ?>
+</div>

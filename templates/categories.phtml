@@ -1,0 +1,17 @@
+<?php if (isset($categoryMenu) && $categoryMenu): ?>
+<div class="pure-u-1">
+    <a href="/category/add" class="pure-button" style="background-color: #984B43; font-size: 50px">
+        <i class="fa fa-plus fa-lg"></i> add new category!
+    </a>
+</div>
+<p></p>
+<?php endif; ?>
+
+<?php foreach($categories as $category): ?>
+<div class="pure-u-1">
+        <a href="/category/<?=$category->getId()?>/gifs">
+            <h1 style="background-color: <?= $category->getColorCode()?>"> <?=$category->getName()?></h1>
+        </a>
+</div>
+    <p></p>
+<?php endforeach; ?>

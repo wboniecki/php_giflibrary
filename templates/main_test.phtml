@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>GifLIB</title>
+    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin: 50px 0 0 0;
+            padding: 0;
+            width: 100%;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: center;
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        h1 {
+            color: #719e40;
+            letter-spacing: -3px;
+            font-family: 'Lato', sans-serif;
+            font-size: 30px;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<h1><a href="/">gif.lib</a> | <a href="/gif/add/test">add GIF</a> |<a href="/categories">categories</a> </h1>
+<?php if (isset($_SESSION['user_session'])): ?>
+<p>Witaj jesteś zalogowany!!</p>
+    <p><a href="/favorites">ULUBIONE!</a></p>
+    <p><a href="/logout">WYLOGUJ SIĘ!</a></p>
+ <?php else: ?>
+    <p><a href="/login">ZALOGUJ SIĘ!</a></p>
+<?php endif; ?>
+<?php if (isset($categoryName)):?>
+<p>
+    <h1><?=$categoryName?></h1>
+</p>
+<?php endif; ?>
+        <?php foreach($gifs as $gif): ?>
+            <p>
+                <a href="/gif/test/<?=$gif->getId()?>"><img src="data:image/gif;base64,<?=$gif->getEncodedBytes()?>" /></a>
+            </p>
+<?php endforeach; ?>
+</body>
+</html>

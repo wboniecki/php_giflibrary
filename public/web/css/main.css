@@ -1,0 +1,131 @@
+body {
+    margin: 50px 0 0 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #E6E6E6;
+    font-size: 18px;
+    background-color: #dddddd;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    color: #E6E6E6;
+    letter-spacing: -3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+.main-bar {
+    background-color: #984B43;
+}
+.title {
+    color:#E6E6E6;
+    letter-spacing: -3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 80px;
+    font-weight: 200;
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.login-pane {
+    margin-right: 5%;
+    margin-top: 2%;
+}
+.login-item {
+    color:#E6E6E6;
+    text-align: right;
+}
+.login-item:hover {
+    text-decoration: underline;
+}
+.main-view {
+    background-color: #E6E6E6;
+}
+
+.main-container {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.main-menu-pane {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.main-menu-item {
+    color: #984B43;
+    text-align: center;
+    font-size: 30px;
+}
+.main-menu-item:hover {
+    background-color: #984B43;
+    color: #E6E6E6;
+}
+
+.gif-list-footer-pane {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: #984B43;
+}
+
+.gif-list-footer-date {
+    color:#E6E6E6;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.gif-list-footer-favorite {
+    color:#E6E6E6;
+    font-size: 20px;
+}
+
+.gif-list-title-pane {
+    background-color: #984B43;
+}
+
+.gif-list-title {
+    color:#E6E6E6;
+    letter-spacing: -3px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    text-align: left;
+    font-size: 40px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.gif-list-category {
+    color:#984B43;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 5%;
+    margin-top: 2%;
+    font-style: italic;
+}
+
+.gif-list-line-separator {
+    height:1px;
+    background:#717171;
+    border-bottom:1px solid #984B43;
+}
+.delete-button {
+    background: rgb(202, 60, 60);
+}
+.delete-button:hover {
+    background: rgb(202, 32, 32);
+}
+
+.add-button {
+    background: rgb(28, 184, 65);
+    font-size: 125%;
+    color: #FFFFFF;
+}

@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Gif <?=$gif->getDescription()?></title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>ID: <?=$gif->getId()?></h1>
+
+<p>Description:<strong><?=$gif->getDescription()?></strong></p>
+
+<p>Username: <?=$gif->getUsername()?></p>
+<p>Date: <?=$gif->getDateUpload()?></p>
+<p>Favorite: <?php//$gif->getFavorite()?></p>
+<p>Category ID: <?=$gif->getCategoryId()?></p>
+<p>Gif:</p>
+<img src="data:image/gif;base64,<?=$gif->getEncodedBytes()?>" />
+</body>
+</html>

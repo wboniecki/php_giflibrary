@@ -1,0 +1,41 @@
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-xl-1-5"></div>
+    <div class="pure-u-1 pure-u-xl-3-5 main-view">
+        <div class="pure-u-1">
+            <div class="pure-u-1 gif-list-title-pane">
+                <div class="gif-list-title">
+                    add new gif!
+                </div>
+            </div>
+        </div>
+        <div class="pure-u-1" style="color: #984B43">
+            <p></p>
+            <form method="post" enctype="multipart/form-data" class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="file" class="pure-input-1-2">file</label>
+                        <input id="file" class="pure-input-1-2 pure-button" type="file" style="background-color: #984B43" name="bytes">
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="description" class="pure-input-1-2">description</label>
+                        <input id="description" class="pure-input-1-2" type="text" value="<?php echo $description;?>" name="description"  placeholder="Description">
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="category" class="pure-input-1-2">category</label>
+                        <select id="category" name="category_id" class="pure-input-1-2">
+                            <?php foreach($categories as $category): ?>
+                                <option value="<?php echo $category->getId(); ?>"><?php echo $category->getName(); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="pure-controls">
+                        <input id="saveForm" class="pure-button add-button" type="submit" name="submit" value="add gif!" />
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <div class="pure-u-1 pure-u-xl-1-5"></div>
+    </div>
+
+</div>

@@ -1,0 +1,63 @@
+<div class="pure-g">
+    <div class="pure-u-1">
+        <?php if (isset($categoryName)): ?>
+            <p>
+            <h1 style="background-color: <?= $categoryColor ?>"><?= $categoryName ?></h1>
+            </p>
+        <?php endif; ?>
+    </div>
+</div>
+<?php foreach ($gifs as $gif): ?>
+    <div class="pure-g" id="<?=$gif->getId()?>">
+        <div class="pure-u-1 pure-u-xl-1-5"></div>
+        <div class="pure-u-1 pure-u-xl-3-5 main-view">
+            <div class="pure-u-1">
+                <div class="pure-u-1 gif-list-title-pane">
+                    <div class="gif-list-title">
+                        <a href="/gif/<?= $gif->getId() ?>"><?= $gif->getDescription() ?></a>
+                    </div>
+                </div>
+                <div class="pure-u-1">
+                    <div class="gif-list-category">
+                        <?php foreach ($categories as $category): ?>
+                            <?php if ($category->getId() == $gif->getCategoryId()): ?>
+                                <a href="/category/<?= $gif->getCategoryId() ?>/gifs">#<?= $category->getName() ?></a>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="pure-u-1 gif-list-line-separator">
+                </div>
+            </div>
+            <div class="pure-u-1">
+                <a href="/gif/<?= $gif->getId() ?>"><img src="data:image/gif;base64,<?= $gif->getEncodedBytes() ?>"
+                                                              style="max-width: 400px"/></a>
+            </div>
+            <div class="pure-u-1 gif-list-footer-pane">
+                <div class="pure-g">
+                    <div class="pure-u-1 pure-u-sm-1-3">
+                        <a href="/<?=$gif->getUsername()?>/gifs"><?=$gif->getUsername()?></a>
+                    </div>
+                    <div class="pure-u-1 pure-u-sm-1-3">
+                        <div class="gif-list-footer-favorite">
+                            <?php //TODO: Dynamicznie nie zmienia się widok, potrzebny AJAX ?>
+                            <i <?php if (isset($userFavorites) && in_array($gif->getId(), $userFavorites)): ?>
+                                class="fa fa-star fa-fw"
+                               <?php else: ?>
+                                class="fa fa-star-o fa-fw"
+                                <?php endif;?>></i>
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-sm-1-3">
+                        <div class="gif-list-footer-date">
+                            <?= $gif->getDateUpload() ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="pure-u-1 pure-u-xl-1-5"></div>
+    </div>
+    <?php if (isset($gifMenu) && $gifMenu): include "gif-menu-bar.phtml"; ECHO "PANEL ADMINA"; endif; ?>
+<?php endforeach; ?>

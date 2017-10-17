@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Category <?=$category->getName()?></title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+<h1>Name: <?=$category->getName()?></h1>
+
+<p><strong>Color: <?=$category->getColorCode()?></strong></p>
+
+<p>ID: <?=$category->getId()?></p>
+
+<!--
+<table>
+    <?php //foreach($category->getColors() as $key=>$value): ?>
+        <tr>
+            <td><?php //echo $value; ?></td>
+        </tr>
+    <?php //endforeach; ?>
+</table>
+-->
+</body>
+</html>
