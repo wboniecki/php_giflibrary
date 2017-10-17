@@ -141,7 +141,7 @@ $app->get('/favorites', function (Request $request, Response $response) {
             "content" => "main.phtml"
         ]);
     } else {
-        // TODO: redirect to main page
+        // redirect to main page
         return $response->withRedirect('/');
     }
     return $response;
@@ -191,7 +191,7 @@ $app->get('/mygifs', function (Request $request, Response $response) {
             "content" => "main.phtml"
         ]);
     } else {
-        // TODO: redirect to main page
+        // redirect to main page
         return $response->withRedirect('/');
     }
     return $response;
@@ -363,7 +363,6 @@ $app->get('/markfavorite/{gifId}', function (Request $request, Response $respons
     }
 });
 
-// TODO - dokończenie usuwania - routes
 $app->get('/delete/{id}', function (Request $request, Response $response, $args) {
     $id = (int)$args['id'];
     if (!isset($_SESSION['user_session'])) {

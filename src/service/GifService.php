@@ -71,7 +71,6 @@ class GifService extends Service
             return new GifEntity($stmt->fetch());
         }
 
-        // TODO ta walidacja nie działa, można przekroczyć wartości w bazie i wywala błąd constructora
 
     }
 
@@ -107,7 +106,6 @@ class GifService extends Service
 
     }
 
-    //TODO zrobienie usuwania - service
     public function delete(GifEntity $gif) {
         $sql = "DELETE FROM Gif WHERE
                 id = :id";
